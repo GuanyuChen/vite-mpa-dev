@@ -1,0 +1,23 @@
+{
+  "name": "muti-vite-dev",
+  "version": "1.0.0",
+  "description": "A Vite-based multi-page development tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"done\""
+  },
+  "dependencies": {
+    "vite":"2.7.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuanyuChen/muti-vite-dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuanyuChen/muti-vite-dev/issues"
+  },
+  "homepage": "https://github.com/GuanyuChen/muti-vite-dev#readme"
+}

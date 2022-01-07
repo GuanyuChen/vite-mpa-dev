@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "A Vite-based multi-page development tool",
   "main": "index.js",
+  "bin": {
+    "vite-dev": "./index.js"
+  },
   "scripts": {
-    "test": "echo \"done\""
+    "test": "echo \"done\"",
+    "dev": "node index.js"
   },
   "dependencies": {
-    "vite":"2.7.10"
+    "vite": "2.7.10",
+    "vite-plugin-node": "0.0.15"
   },
   "repository": {
     "type": "git",

@@ -1,43 +1,35 @@
-const { build, createServer, defineConfig } = require("vite");
-const { VitePluginNode } = require("vite-plugin-node");
+const { createServer, defineConfig } = require("vite");
 const { resolve } = require("path");
+const react = require("@vitejs/plugin-react");
+const externalGlobals = require("rollup-plugin-external-globals");
 
 /**
  * TODO: 多页面配置
  * TODO: custom Server 配置
  */
-module.exports = async () => {
+module.exports = async ({ entryMapList, webappDirectory }) => {
 	const server = await createServer(
 		defineConfig({
-			configFile: false,
-
 			server: {
-				port: 5011,
+				port: 5010,
 			},
-			resolve: {
-				alias: [
-					{
-						find: "sf",
-						replacement:
-							"Users/guanyu/code/ares-template/njk-webapp-template/static/src",
-					},
-				],
-			},
+			root: resolve(webappDirectory, "static/src/"),
+			public: resolve(webappDirectory, "static/src/"),
+			plugins: [
+				react(),
+				externalGlobals({
+					"react-dom": "ReactDOM",
+					react: "React",
+					redux: "Redux",
+					"react-redux": "ReactRedux",
+					"redux-thunk": "ReduxThunk",
+				}),
+			],
 			build: {
-				rollupOptions: {
-					input: {
-						index: "/Users/guanyu/code/ares-template/njk-webapp-template/views/src/layout/base.njk",
-					},
-				},
+				// 在 outDir 中生成 manifest.json
+				manifest: true,
+				rollupOptions: [...entryMapList],
 			},
-			// plugins: [
-			// 	...VitePluginNode({
-			// 		adapter: "koa",
-			// 		appPath:
-			// 			"/Users/guanyu/code/ares-template/njk-webapp-template/server.js",
-			// 		exportName: "server",
-			// 	}),
-			// ],
 		})
 	);
 

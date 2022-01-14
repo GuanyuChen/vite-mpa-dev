@@ -1,13 +1,12 @@
 {
-  "name": "muti-vite-dev",
-  "version": "1.0.0",
-  "description": "A Vite-based multi-page development tool",
+  "name": "vite-mpa-dev",
+  "version": "0.0.1",
+  "description": "A Vite-based multi-page-application development tool",
   "main": "index.js",
   "bin": {
-    "vite-dev": "./index.js"
+    "vite-mpa-dev": "./index.js"
   },
   "scripts": {
-    "test": "echo \"done\"",
     "dev": "node index.js"
   },
   "dependencies": {

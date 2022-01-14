@@ -1,10 +1,10 @@
 const program = require("commander");
-const initParams = require("./lib/initParams");
-const viteBuild = require("./viteBuild");
+const init = require("./lib/init");
 
 program
 	.version(require("../package").version)
 	.option("-w, --webapp-directory [webapp directory]")
+	.option("-p, --port [port]")
 	.parse(process.argv);
 
-viteBuild(initParams(program._optionValues));
+init(program._optionValues);

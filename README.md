@@ -5,6 +5,7 @@ A Vite-based multi-page-application development tool
 ## TODO
 
 -   [x] vite 多入口 JS 编译
+-   [ ] vite / webpack 支持低版本浏览器调试
 -   [ ] vite 默认 js 后缀编译
 -   [ ] 自动插入编译需要资源引用标签
 -   [ ] 增加参数校验工具方法及单测
